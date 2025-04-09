@@ -79,7 +79,9 @@ services:
         condition: service_healthy
 
   n8n:
-    <<: *service-n8n
+    build:
+  context: .
+  dockerfile: Dockerfile
     hostname: n8n
     container_name: n8n
     restart: unless-stopped
